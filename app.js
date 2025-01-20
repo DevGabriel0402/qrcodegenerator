@@ -33,3 +33,8 @@ btnGerar.onclick = async () => {
     }
 }
 
+inputUrl.onkeydown = (event) => {
+    if (event.key === "Enter") {
+        btnGerar.click()
+    }
+}
