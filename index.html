@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <script src="app.js" defer></script>
+    <script src="//cdn.rawgit.com/davidshimjs/qrcodejs/gh-pages/qrcode.min.js"></script>
+    <title>Gerador de QR Code</title>
+</head>
+
+<body>
+    <div id="toast"><i class='bx bxs-error'></i>Ops!! Preencha o campo com alguma informação.</div>
+    <div class="container">
+        <h1 class="title">QRCode <span>Fácil</span> </h1>
+        <input type="text" placeholder="https://" id="inputUrl">
+        <div class="buttons">
+            <button class="btn" id="btnGerar">Gerar QRcode</button>
+            <button class="btn" id="btnLimpar">Limpar</button>
+        </div>
+        <div id="qrcode"></div>
+    </div>
+    <footer>Criado por <span>Gabriel</span>.</footer>
+</body>
+
+</html>
