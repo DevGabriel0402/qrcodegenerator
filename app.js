@@ -2,6 +2,7 @@ const btnGerar = document.getElementById("btnGerar");
 const btnLimpar = document.getElementById("btnLimpar");
 const inputUrl = document.getElementById("inputUrl");
 const toast = document.getElementById("toast");
+const loadIn = document.getElementById("load");
 const qrCodeContainer = document.getElementById("qrcode");
 qrcode = new QRCode(qrCodeContainer);
 
@@ -14,18 +15,27 @@ btnLimpar.onclick = () => {
     setTimeout(() => {
         qrCodeContainer.innerHTML = "";
         qrcode = new QRCode(qrCodeContainer);
-    }, 900);
+    }, 1000);
 }
 
 btnGerar.onclick = async () => {
     if (inputUrl.value === "") {
         toast.classList.add("toast-active");
+        loadIn.classList.add("toast-carregamento")
         setTimeout(() => {
             inputUrl.focus();
             toast.classList.remove("toast-active")
+            loadIn.classList.remove("toast-carregamento")
             toast.style.animation = "fadeOut .5s forwards";
+            toast.style.display = "flex"
 
-        }, 2000)
+
+        }, 2500)
+
+        setTimeout(() => {
+            toast.style.display = "none"
+        }, 3000)
+
 
     } else {
         await qrcode.makeCode(inputUrl.value);
